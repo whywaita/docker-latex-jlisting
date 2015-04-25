@@ -1,9 +1,12 @@
 # Re:VIEW image for Docker
 
-このリポジトリは[Docker](https://www.docker.io/)上で[Re:VIEW](https://github.com/kmuto/review/)を動かすためのものです。
+このリポジトリは[Docker](https://www.docker.com/)上で[Re:VIEW](https://github.com/kmuto/review)を動かすためのものです。
+[vvakameさんのもの](https://github.com/vvakame/docker-review)をforkして、自分好みに修正しています。
 
-利用可能になるのは、review関連コマンドとrakeコマンド、texlive関連コマンド、vvakameの趣味により、Node.jsの利用環境とgitコマンドも整備されます。
+利用可能になるのは、review関連コマンドとrakeコマンド、texlive関連コマンドです。
 
-[Docker index](https://index.docker.io/u/vvakame/review/)にTrusted Buildとして置いてあるのでご活用ください。
+[Docker Hub](https://registry.hub.docker.com/u/orangain/review/)にAutomated Buildとして置いてあるのでご活用ください。
 
-最近台頭してきたCIサービスの[drone.io](https://drone.io/)はDockerをベースにしてるため、vvakame/reviewをベースに指定すればRe:VIEWドキュメントのビルドをCIサービス上で簡単に行うことができるでしょう。
+## 参考
+
+[Re:VIEWとDockerとCircleCIで原稿を継続的インテグレーション - orangain flavor](http://orangain.hatenablog.com/entry/review-docker-circleci)
