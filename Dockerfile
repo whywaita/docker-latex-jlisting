@@ -33,4 +33,4 @@ RUN mkdir -p /usr/share/texlive/texmf-dist/tex/latex/jlisting && \
 
 # Install review
 RUN gem install specific_install --no-rdoc --no-ri
-RUN gem specific_install https://github.com/orangain/review.git -b fix-missing-listing-name
+RUN gem specific_install https://github.com/kmuto/review.git
