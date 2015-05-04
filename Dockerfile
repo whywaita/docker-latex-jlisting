@@ -34,3 +34,12 @@ RUN mkdir -p /usr/share/texlive/texmf-dist/tex/latex/jlisting && \
 # Install review
 RUN gem install specific_install --no-rdoc --no-ri
 RUN gem specific_install https://github.com/kmuto/review.git
+
+# Install kindlegen
+ENV KINDLEGEN_VERSION=kindlegen_linux_2.6_i386_v2_9
+RUN mkdir -p /tmp/kindlegen && \
+	cd /tmp/kindlegen && \
+	curl http://kindlegen.s3.amazonaws.com/${KINDLEGEN_VERSION}.tar.gz -o ${KINDLEGEN_VERSION}.tar.gz && \
+	tar xvf ${KINDLEGEN_VERSION}.tar.gz && \
+	mv kindlegen /usr/local/bin && \
+	rm -rf /tmp/kindlegen
