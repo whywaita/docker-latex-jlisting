@@ -7,7 +7,7 @@ ENV LANG en_US.UTF-8
 #   * texlive-*: for LaTeX
 #   * zip: for review-epubmaker
 #   * curl & bzip2: for installing jlisting.sty
-#   * ruby: for review
+#   * ruby & ruby-pygments.rb: for review
 #   * rake & git: for specific_install
 RUN apt-get update && \
 	apt-get install -y locales && \
@@ -21,6 +21,7 @@ RUN apt-get update && \
 		curl \
 		bzip2 \
 		ruby \
+		ruby-pygments.rb \
 		rake \
 		git && \
 	apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
