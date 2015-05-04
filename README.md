@@ -10,3 +10,9 @@
 ## 参考
 
 [Re:VIEWとDockerとCircleCIで原稿を継続的インテグレーション - orangain flavor](http://orangain.hatenablog.com/entry/review-docker-circleci)
+
+## How to build
+
+```
+docker build -t orangain/review .
+```
