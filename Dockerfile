@@ -33,8 +33,7 @@ RUN mkdir -p /usr/share/texlive/texmf-dist/tex/latex/jlisting && \
 	mktexlsr
 
 # Install review
-RUN gem install specific_install --no-rdoc --no-ri
-RUN gem specific_install https://github.com/kmuto/review.git
+RUN gem install review
 
 # Install kindlegen
 ENV KINDLEGEN_VERSION=kindlegen_linux_2.6_i386_v2_9
