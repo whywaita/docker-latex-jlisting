@@ -46,3 +46,8 @@ RUN mkdir -p /tmp/kindlegen && \
 	chmod 755 kindlegen && \
 	mv kindlegen /usr/local/bin/ && \
 	rm -rf /tmp/kindlegen
+
+# Install node.js to use textlint
+RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
+	apt-get install -y nodejs && \
+	apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
