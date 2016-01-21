@@ -10,6 +10,7 @@ ENV REVIEW_VERSION 1.6.0
 #   * curl & bzip2: for installing jlisting.sty
 #   * ruby & ruby-pygments.rb: for review
 #   * rake & git: for specific_install
+#   * imagemagick: convert images
 RUN apt-get update && \
 	apt-get install -y locales && \
 	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
@@ -24,7 +25,8 @@ RUN apt-get update && \
 		ruby \
 		ruby-pygments.rb \
 		rake \
-		git && \
+		git \
+		imagemagick && \
 	apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # Install jlisting.sty
