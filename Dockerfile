@@ -2,6 +2,7 @@ FROM debian:jessie
 MAINTAINER orangain
 
 ENV LANG en_US.UTF-8
+ENV REVIEW_VERSION 1.6.0
 
 # Setup and Install
 #   * texlive-*: for LaTeX
@@ -33,7 +34,7 @@ RUN mkdir -p /usr/share/texlive/texmf-dist/tex/latex/jlisting && \
 	mktexlsr
 
 # Install review
-RUN gem install review
+RUN gem install review -v $REVIEW_VERSION
 
 # Install kindlegen
 ENV KINDLEGEN_VERSION=kindlegen_linux_2.6_i386_v2_9
