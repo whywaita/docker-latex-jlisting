@@ -21,7 +21,7 @@ RUN apt-get update && \
 		curl \
 		bzip2 \
 		git 
-#		imagemagick && \
+		imagemagick && \
 RUN	apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # Install jlisting.sty
