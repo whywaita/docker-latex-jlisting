@@ -20,8 +20,8 @@ RUN apt-get update && \
 		texlive-fonts-recommended \
 		curl \
 		bzip2 \
-		git 
-		imagemagick && \
+		git \
+		imagemagick 
 RUN	apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # Install jlisting.sty
