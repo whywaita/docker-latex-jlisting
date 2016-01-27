@@ -18,15 +18,11 @@ RUN apt-get update && \
 	apt-get install -y \
 		texlive-lang-cjk \
 		texlive-fonts-recommended \
-		zip \
 		curl \
 		bzip2 \
-		ruby \
-		ruby-pygments.rb \
-		rake \
-		git \
-		imagemagick && \
-	apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+		git 
+#		imagemagick && \
+RUN	apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # Install jlisting.sty
 RUN mkdir -p /usr/share/texlive/texmf-dist/tex/latex/jlisting && \
