@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER whywaita
+MAINTAINER whywaita <dev@whywrite.it>
 
 ENV LANG en_US.UTF-8
 
