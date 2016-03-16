@@ -1,21 +1,21 @@
-box: wercker-labs/docker
+box: jparyani/docker@1.0.1
 no-response-timeout: 30
 build:
   steps:
     - script:
-      name: docker setup
-      code: |
-        wget https://master.dockerproject.org/linux/amd64/docker
-        chmod +x docker.1
-        ./docker.1 -v
+        name: docker setup
+        code: |
+          wget https://master.dockerproject.org/linux/amd64/docker
+          chmod +x docker.1
+          ./docker.1 -v
     - script:
-      name: docker build
-      code: |
-        sudo service docker stop
-        sudo /sbin/start-stop-daemon -b -x /pipeline/build/docker.1 -S -- daemon
-        sleep 300;echo ".";sleep 300;echo ".";sleep 300;echo "."
-        sudo ./docker.1 build -t whywaita/docker-latex-jlisting .
+        name: docker build
+        code: |
+          sudo service docker stop
+          sudo /sbin/start-stop-daemon -b -x /pipeline/build/docker.1 -S -- daemon
+          sleep 300;echo ".";sleep 300;echo ".";sleep 300;echo "."
+          sudo ./docker.1 build -t whywaita/docker-latex-jlisting .
     - script:
-      name: docker test
-      code: |
-        sudo ./docker.1 run -it whywaita/docker-latex-jlisting /tmp/spec.sh
+        name: docker test
+        code: |
+          sudo ./docker.1 run -it whywaita/docker-latex-jlisting /tmp/spec.sh
