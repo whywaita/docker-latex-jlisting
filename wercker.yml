@@ -21,6 +21,7 @@ build:
           echo $PATH
           pwd
           sudo find /* -name "docker"
+          cat -n /etc/init.d/docker
     - script:
         name: docker build
         code: |
