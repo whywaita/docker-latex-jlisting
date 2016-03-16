@@ -1,14 +1,13 @@
 sudo: required
-
 language: ruby
-
 services:
   - docker
-
 before_install:
   - docker info
   - docker build -t whywaita/docker-latex-jlisting .
-  - docker ps -a
-
+  - docker images
 script:
   - docker run -i -t whywaita/docker-latex-jlisting /tmp/spec.sh
+notifications:
+  slack:
+    secure: iPH7oKh0Dhnv3kjgXumsjCCKnxBIVTv6p5PQhTfbK9xmJ243KH7XpahhYD4wL/lFS7pAfNZ2CZ0owb2DmlXBT914kkX//HbJDGHfX8i7wQSGJz0dt3EHWi9BjhaMeRjtySXRRGZSlgZ8eBpfks9i/7R1sDEgEUtAjGqfW/JI0rJP1ga385vEWBc5Wx9E8Af9yPZX2Qjlh301bCnfDspe0fe+4PVr4GWthGzmhtwzm9eiqzGwU6WS0APxscO9NDPAtSexnz2WHpdL3QrTChcFeLzxeMo2P/99hJXEYgCdjwTLAZHVy/YdfzywJuhsntfvdbONMHi3ta6stDnm/4pfbQjiUmbvf3ueZIbfLAntRPGT7GQ0IjWI9xhGr6nzFZgFiCSrYS4jNK04LEHq5Cb84NWrwsTEd2CbbVpRd4h9+SbwEf/B1sE8jQljsy2A7ucUlNT92MSlX9/rwTJgErTXqF59dQoQb44kXruQlJlEb9LO8lW8kl7OXnq7vq9StHZfFnSj9tYMZvctOS8dLxemTEW7x94vWA/nn/lARoTrlOk26mxAiPGdXAPZv7CYNF49awYr0cz4nMIe4ButZ+LWKQl44r2UuYfGa370W0pUgVXnNsK0VjiZO38/hn1h5aYhngLxZDluttKiNva2lW7CPpwK0vEqv6HUv/DPZzdqeyU=
