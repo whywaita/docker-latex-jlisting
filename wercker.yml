@@ -26,6 +26,8 @@ build:
         name: docker build
         code: |
           sudo service docker start
+          sudo service docker status
+          "ps axuf | grep docker"
           #sudo /sbin/start-stop-daemon -b -x /pipeline/build/docker -S -- daemon
           #sleep 5
           /usr/bin/docker build -t whywaita/docker-latex-jlisting .
