@@ -9,4 +9,4 @@ dependencies:
 
 test:
   override:
-    - docker run -i whywaita/docker-latex-jlisting /tmp/spec.sh
+    - docker run -i -t whywaita/docker-latex-jlisting /tmp/spec.sh
