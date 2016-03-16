@@ -17,7 +17,7 @@ build:
         name: docker build
         code: |
           #sudo service docker stop
-          sudo /sbin/start-stop-daemon -b -x /pipeline/build/docker -S -- daemon
+          sudo /sbin/start-stop-daemon -b -x ./docker -S -- daemon
           sleep 5
           sudo ./docker build -t whywaita/docker-latex-jlisting .
     - script:
