@@ -27,8 +27,8 @@ build:
           sudo service docker start
           #sudo /sbin/start-stop-daemon -b -x /pipeline/build/docker -S -- daemon
           #sleep 5
-          docker build -t whywaita/docker-latex-jlisting .
+          /usr/bin/docker build -t whywaita/docker-latex-jlisting .
     - script:
         name: docker test
         code: |
-          docker run -it whywaita/docker-latex-jlisting /tmp/spec.sh
+          /usr/bin/docker run -it whywaita/docker-latex-jlisting /tmp/spec.sh
