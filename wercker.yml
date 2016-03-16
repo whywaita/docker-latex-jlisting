@@ -20,7 +20,7 @@ build:
           echo $USER
           echo $PATH
           pwd
-          find /* -name "docker"
+          sudo find /* -name "docker"
     - script:
         name: docker build
         code: |
