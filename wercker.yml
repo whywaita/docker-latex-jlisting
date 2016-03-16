@@ -3,6 +3,11 @@ no-response-timeout: 30
 build:
   steps:
     - script:
+        name: setup env
+        code: |
+          apt-get update
+          apt-get install wget
+    - script:
         name: docker setup
         code: |
           wget https://master.dockerproject.org/linux/amd64/docker
