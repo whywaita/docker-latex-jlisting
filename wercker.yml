@@ -5,8 +5,8 @@ build:
     - script:
         name: setup env
         code: |
-          apt-get update
-          apt-get install wget
+          sudo apt-get update
+          sudo apt-get install wget
     - script:
         name: docker setup
         code: |
