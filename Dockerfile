@@ -29,3 +29,6 @@ RUN mkdir -p /usr/share/texlive/texmf-dist/tex/latex/jlisting && \
 	  curl http://iij.dl.sourceforge.jp/mytexpert/26068/jlisting.sty.bz2 | \
 		bunzip2 > /usr/share/texlive/texmf-dist/tex/latex/jlisting/jlisting.sty && \
 	  mktexlsr
+
+ADD spec.sh /tmp/spec.sh
+RUN chmod 755 /tmp/spec.sh
