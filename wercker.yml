@@ -1,0 +1,37 @@
+box: jparyani/docker@1.0.1
+no-response-timeout: 30
+build:
+  steps:
+    #    - script:
+    #        name: setup env
+    #        code: |
+    #          sudo apt-get update
+    #          sudo apt-get install wget
+    #    - script:
+    #        name: docker setup
+    #        code: |
+    #          wget -O docker https://master.dockerproject.org/linux/amd64/docker 
+    #          chmod +x docker
+    #          ./docker -v
+    - script:
+        name: check env
+        code: |
+          id
+          echo $USER
+          echo $PATH
+          pwd
+          sudo find /* -name "docker"
+          cat -n /etc/init.d/docker
+    - script:
+        name: docker build
+        code: |
+          sudo service docker start
+          sudo service docker status
+          ps axuf | grep docker
+          #sudo /sbin/start-stop-daemon -b -x /pipeline/build/docker -S -- daemon
+          #sleep 5
+          /usr/bin/docker build -t whywaita/docker-latex-jlisting .
+    - script:
+        name: docker test
+        code: |
+          /usr/bin/docker run -it whywaita/docker-latex-jlisting /tmp/spec.sh
